@@ -1,1 +1,13 @@
-<h1>Big Up</h1>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+io = io.connect();
+
+// Send the ready event.
+io.emit('login', {userId: '100', geo: '100'});
+
+// Listen for the new visitor event.
+io.on('new visitor', function() {
+    $('body').append('<p>New visitor, hooray! ' + new Date().toString() +'</p>')
+});
+</script>

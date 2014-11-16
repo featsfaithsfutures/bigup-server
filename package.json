@@ -10,7 +10,6 @@
     "azure": "latest",
     "express.io": "latest",
     "nconf": "latest",
-    "nodemon": "latest",
     "underscore": "latest",
     "ws": "^0.4.32"
   }

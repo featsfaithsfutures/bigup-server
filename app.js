@@ -14,6 +14,7 @@ app.io.route('bigupUser', function(req) {
 });
 
 app.io.route('login', function(req) {
+  console.log('Login attempt');
   userid = req.data.userid;
   geotag = req.data.geo;
   console.log("joining bigup channel room for tag <"+geotag+">");
