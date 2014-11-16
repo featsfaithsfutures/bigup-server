@@ -7,9 +7,11 @@
     "start": "nodemon app.js"
   },
   "dependencies": {
+    "azure": "latest",
     "express.io": "latest",
+    "nconf": "latest",
     "nodemon": "latest",
-    "nconf":"latest",
-    "underscore": "latest"
+    "underscore": "latest",
+    "ws": "^0.4.32"
   }
 }
