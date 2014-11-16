@@ -8,7 +8,7 @@ nconf       = require('nconf');
 app.http().io();
 port = process.env.PORT || 2014;
 
-app.io.route('bigup/user', function(req) {
+app.io.route('bigupUser', function(req) {
     console.log("sending a big up to <" +req.data.recepientId+ ">");
     bigUpUser(req.data.recepientId, req.data.userid);
 });
@@ -22,7 +22,7 @@ app.io.route('login', function(req) {
   req.io.join(req.data.userid);
 });
 
-app.io.route('bigup/channel', function(req) {
+app.io.route('bigupChannel', function(req) {
   console.log("sending a big up to" < + req.data.geotag + ">");
   bigUpGroup(req.data.geotag, req.data.userId);
 });
