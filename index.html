@@ -1,13 +1,29 @@
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
+<html>
+    
+<head>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//socket.io-1.2.0.js"></script>
 <script>
 io = io.connect();
 
-// Send the ready event.
-io.emit('login', {userId: '100', geo: '100'});
+$("#login").click(function(){
+    userid = $("#userid").val()
+    from   = $("#from").val()
+    io.emit('login', {userId: userid, geo: from});
+})
 
-// Listen for the new visitor event.
-io.on('new visitor', function() {
-    $('body').append('<p>New visitor, hooray! ' + new Date().toString() +'</p>')
-});
+  io.on('bigup', function(data) {
+    $("#bigups").append("you got a big up from: " + data.senderId)
+  })
+
 </script>
+</head>
+
+<body>
+  <input id="userid" type="text" />
+  <input id="from"   type="text" label="from"/>
+  <input type="button" id="login" />
+  <div id="bigups" ></div>
+</body>
+
+</html>
