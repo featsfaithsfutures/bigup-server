@@ -1,15 +1,15 @@
 {
-  "name": "big Up server",
+  "name": "bigup_server",
   "description": "+1 to you",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-      "start": "nodemon app.js"
-    },
+    "start": "nodemon app.js"
+  },
   "dependencies": {
     "express.io": "latest",
     "nodemon": "latest",
     "nconf":"latest",
-    "underscore": "latest",
+    "underscore": "latest"
   }
 }
